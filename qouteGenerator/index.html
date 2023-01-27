@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+*,*::after,**::before{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+    font-family:"Shadows Into Light", sans-serif;
+    
+}
+
+body{
+    background-image: url("white-crumpled-paper-texture-background-design-space-white-tone_1258-78696.avif");
+    background-repeat: repeat;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    
+}
+.g{
+    display: grid;
+    gap: 2em;
+    padding: 4em;
+}
+
+.qoute{
+    font-size: 30px;
+    align-self: flex-end;
+    
+}
+.author{
+    justify-self: end;
+    font-size: 1.2em;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="g">
+            <div class="qoute"></div>
+            <div class="author">- Kanye West</div>
+        </div>
+    </div>
+
+    <script>
+        fetch("https://api.kanye.rest")
+        .then(response=>response.json()
+        .then(data=>{
+            console.log(data.quote)
+            document.querySelector(".qoute").innerHTML=`${data.quote}`
+}))
+
+    </script>
+</body>
+</html>
